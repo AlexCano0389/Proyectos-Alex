@@ -6,29 +6,27 @@ var res = IsReversible(n);
 
 function IsReversible(n)
 { 
-        let n1; 
+        let n1=""; 
 	n = n + "";
 	n1 = n.split("").reverse().join("");
-        let sum = number+n1;
+        let sum = number + n1;
         let sum1 = sum.split('');
+		let dig = 0
         for(let each in sum1) {
-           var dig = sum1[each].split(",");
+           dig =dig + sum1[each].split(",");
          }
         for (i = 0; i < dig.length; i++) {
              
            if(dig % 2 != 0 && n.length == n1.length) {
+
            return true;
            }else{
 
            return false;
            }
          }
-        
-  
 }
-
-
-console.log(res);
+console.log(IsReversible(n))
 /*
 C#
 
