@@ -11,7 +11,7 @@ function IsReversible(n)
 	n1 = n.split("").reverse().join("");
         let sum = number + n1;
         let sum1 = sum.split('');
-		let dig = 0
+        let dig = 0;
         for(let each in sum1) {
            dig =dig + sum1[each].split(",");
          }
