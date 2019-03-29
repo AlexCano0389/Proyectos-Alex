@@ -1,25 +1,26 @@
 
-var matrix = new Array(10);
-
-for(var i=0; i<10; i++) {
-    matrix[i] = new Array(10);
+function main() {
+    let arr = [
+        [11, 2, 4],
+        [4, 5, 6],
+        [10, 8, -12]
+    ];
+    var output = DiagonalDifference(arr);
+    console.log("The absolute difference is: " + output);
 }
 
-function diferenciaDiag(matrix){
-    var n = matrix.length;
-    var diag1 = 0;
-    var diag2 = 0;
-    for(var i=0; i<n; i++){
-        for(var j=0; j<n; j++){
-            // los elementos de la giagonal principal
-            if(i === j) { 
-                diag1 += matrix[i][j];
-            }
-            // los elementos de la diagonal secundaria
-            if(i + j === n - 1){
-                diag2 += matrix[i][j];
-            }
-        }
+function DiagonalDifference(arr) {
+    
+    let diag1 = 0;
+    let diag2 = 0;
+    for (let i = 0; i < arr.length; i++) {
+       
+        diag1 = diag1 + arr[i][i];
+        diag2 = diag2 + arr[arr.length - 1][i]
     }
-    return Math.abs(diag1 - diag2);
+    
+    return Math.abs(diag1 - diag2)
+
 }
+
+main()
