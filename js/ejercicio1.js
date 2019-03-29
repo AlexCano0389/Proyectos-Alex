@@ -1,32 +1,34 @@
-var number = prompt("Introduce un número");
+let reversible = n => {
+    let array_n = n.toString().split('')
+    let reverse_n = array_n.slice().reverse()
+   
+    reverse_n = parseInt(reverse_n.join(''))
+  
+    let array_reverse_n = reverse_n.toString().split('')
+   
+    if (same_size(array_n, array_reverse_n)) {
+        
+        let sum = n + reverse_n
+      
+        let array_sum = sum.toString().split('')
 
-var n = parseInt(number);
+        let filter_sum = array_sum.filter(i => i % 2 == 0)
+       
+        if (filter_sum.length == 0) {
+            return true
+        }
 
-var res = IsReversible(n);
-
-function IsReversible(n)
-{ 
-        let n1=""; 
-	n = n + "";
-	n1 = n.split("").reverse().join("");
-        let sum = number + n1;
-        let sum1 = sum.split('');
-        let dig = 0;
-        for(let each in sum1) {
-           dig =dig + sum1[each].split(",");
-         }
-        for (i = 0; i < dig.length; i++) {
-             
-           if(dig % 2 != 0 && n.length == n1.length) {
-
-           return true;
-           }else{
-
-           return false;
-           }
-         }
+    } else {
+        return false
+    }
+    
+    return false
 }
-console.log(IsReversible(n))
+
+let same_size = (arr1, arr2) => arr1.length == arr2.length ? true : false
+let num_pruebas = [36, 904, 1010, 37, 209, 0]
+console.log(num_pruebas)
+console.log(num_pruebas.map(prueba => reversible(prueba)))
 /*
 C#
 
